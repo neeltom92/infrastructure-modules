@@ -24,10 +24,6 @@ variable "aws_account_id" {
   type        = string
 }
 
-variable "aws_region" {
-  description = "AWS region"
-  type        = string
-}
 
 variable "sshkeys" {
   description = "SSH keys to access the worker nodes"
