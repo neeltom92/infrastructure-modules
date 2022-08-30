@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/neeltom92/infrastructure-modules/compare/v1.1.0...v1.1.1) (2022-08-30)
+
+
+### Fix
+
+* update the aws region  ([d04b043](https://github.com/neeltom92/infrastructure-modules/commit/d04b043429b252860ee745cf1dfa2c435a494e9e))
+* update the aws region in vars.tf ([561ed94](https://github.com/neeltom92/infrastructure-modules/commit/561ed944ff71c736315b0102fe8098e3d7a699eb))
+
 # [1.1.0](https://github.com/neeltom92/infrastructure-modules/compare/v1.0.0...v1.1.0) (2022-08-30)
 
 
