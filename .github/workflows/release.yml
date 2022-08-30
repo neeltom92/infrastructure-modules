@@ -24,7 +24,8 @@ jobs:
             @semantic-release/release-notes-generator@9.0.3
             @semantic-release/changelog@5.0.1
             @semantic-release/github@7.2.3
-            @semantic-release/git@9.0.0
+            @semantic-release/git
+            conventional-changelog-eslint
           branches: |
             ['main']
         env:
