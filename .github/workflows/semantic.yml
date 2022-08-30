@@ -15,3 +15,5 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
         WITH_V: true
+
+# this sem version is referenced from : https://github.com/anothrNick/github-tag-action
