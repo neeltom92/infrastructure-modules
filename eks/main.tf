@@ -162,6 +162,7 @@ module "eks" {
       labels = {
         env  = var.environment
         kind = "default"
+        owner = "devops"
       }
       metadata_options = {
         http_endpoint               = "enabled"
@@ -186,6 +187,7 @@ module "eks" {
       labels = {
         env  = var.environment
         kind = "shared"
+        owner = "devops"
       }
       metadata_options = {
         http_endpoint               = "enabled"
@@ -211,6 +213,7 @@ module "eks" {
       labels = {
         env  = var.environment
         kind = "memory-intensive"
+        owner = "devops"
 
       }
       metadata_options = {
