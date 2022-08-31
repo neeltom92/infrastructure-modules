@@ -46,26 +46,26 @@ variable "disksize" {
   type        = string
 }
 
-variable "spot_instance_types"{
+variable "spot_instance_types" {
   default = ["t3a.medium"]
   description = "List of instance types for SPOT instance selection"
 }
 
-variable "ondemand_shared_instance_type"{
+variable "ondemand_shared_instance_type" {
   default = ["t3a.medium"]
   description = "On Demand default instance type"
 }
 
-variable "ondemand_memory_instance_type"{
+variable "ondemand_memory_instance_type" {
   default = ["m5a.large"]
   description = "On Demand instance type with increased memory"
 }
 
-variable "max_size"{
+variable "max_size" {
   default = 2
   description = "How many instance can be created max"
 }
-variable "desired_size"{
+variable "desired_size" {
   default = 1
   description = "How many instance should be running at all times"
 }
