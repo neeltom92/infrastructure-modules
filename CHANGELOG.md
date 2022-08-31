@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/neeltom92/infrastructure-modules/compare/v1.1.2...v1.1.3) (2022-08-31)
+
+
+### Fix
+
+* update the eks repos ([63efb0e](https://github.com/neeltom92/infrastructure-modules/commit/63efb0ea1d315d2f39270f75be2e738f80cb1d50))
+
 ## [1.1.2](https://github.com/neeltom92/infrastructure-modules/compare/v1.1.1...v1.1.2) (2022-08-30)
 
 
