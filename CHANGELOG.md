@@ -1,3 +1,10 @@
+## [1.1.7](https://github.com/neeltom92/infrastructure-modules/compare/v1.1.6...v1.1.7) (2022-08-31)
+
+
+### Fix
+
+* change the instance type details ([d31eaa5](https://github.com/neeltom92/infrastructure-modules/commit/d31eaa5f5e44b115650d796616e1670995728276))
+
 ## [1.1.6](https://github.com/neeltom92/infrastructure-modules/compare/v1.1.5...v1.1.6) (2022-08-31)
 
 
