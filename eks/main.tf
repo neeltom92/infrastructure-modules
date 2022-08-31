@@ -172,6 +172,7 @@ module "eks" {
       tags = {
         Name    = "${module.eks.cluster_id}-default"
         environment = var.environment
+        owner = "devops"
       }
     }
     shared = {
@@ -196,6 +197,7 @@ module "eks" {
       tags = {
         Name    = "${module.eks.cluster_id}-shared"
         environment = var.environment
+        owner = "devops"
       }
     }
     memory-intensive = {
@@ -209,6 +211,7 @@ module "eks" {
       labels = {
         env  = var.environment
         kind = "memory-intensive"
+
       }
       metadata_options = {
         http_endpoint               = "enabled"
@@ -220,6 +223,7 @@ module "eks" {
       tags = {
         Name    = "${module.eks.cluster_id}-memory-intensive"
         environment = var.environment
+        owner = "devops"
       }
     }
   }
