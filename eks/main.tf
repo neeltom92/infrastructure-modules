@@ -120,7 +120,6 @@ module "eks" {
       from_port   = 0
       to_port     = 0
       type        = "ingress"
-      cidr_blocks = [data.aws_vpc.vpc.cidr_block]
       self        = true
     }
     egress_all = {
