@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/neeltom92/infrastructure-modules/compare/v1.1.3...v1.1.4) (2022-08-31)
+
+
+### Fix
+
+* update the iam policy ([3d7b456](https://github.com/neeltom92/infrastructure-modules/commit/3d7b456f4977e42d0d4fce3ec52bf677ea8ac780))
+
 ## [1.1.3](https://github.com/neeltom92/infrastructure-modules/compare/v1.1.2...v1.1.3) (2022-08-31)
 
 
