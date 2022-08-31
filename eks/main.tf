@@ -149,7 +149,7 @@ module "eks" {
       desired_size           = var.desired_size
       create_launch_template = false
       launch_template_name   = ""
-      instance_types         = [var.spot_instance_types]
+      instance_types         = var.spot_instance_types
       capacity_type          = "SPOT"
       labels = {
         env  = var.environment
@@ -172,7 +172,7 @@ module "eks" {
       desired_size           = var.desired_size
       create_launch_template = false
       launch_template_name   = ""
-      instance_types         = [var.ondemand_shared_instance_type]
+      instance_types         = var.ondemand_shared_instance_type
       capacity_type          = "ON_DEMAND"
       labels = {
         env  = var.environment
@@ -196,7 +196,7 @@ module "eks" {
       desired_size           = var.desired_size
       create_launch_template = false
       launch_template_name   = ""
-      instance_types         = [var.ondemand_memory_instance_type]
+      instance_types         = var.ondemand_memory_instance_type
       capacity_type          = "ON_DEMAND"
       labels = {
         env  = var.environment
