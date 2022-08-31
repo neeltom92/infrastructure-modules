@@ -47,18 +47,22 @@ variable "disksize" {
 }
 
 variable "spot_instance_types" {
-  default = ["t3a.medium"]
   description = "List of instance types for SPOT instance selection"
+  type        = list(string)
+  default     = null
 }
 
 variable "ondemand_shared_instance_type" {
-  default = ["t3a.medium"]
-  description = "On Demand default instance type"
+  description = "List of instance types for shared instance selection"
+  type        = list(string)
+  default     = null
 }
 
 variable "ondemand_memory_instance_type" {
-  default = ["m5a.large"]
-  description = "On Demand instance type with increased memory"
+
+  description = "Node group with high memeory utilisation"
+  type        = list(string)
+  default     = null
 }
 
 variable "max_size" {
