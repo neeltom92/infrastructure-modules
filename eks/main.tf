@@ -16,6 +16,14 @@ resource "aws_security_group" "all_worker_mgmt" {
   name_prefix = "all_worker_management"
   vpc_id      = var.vpc_id
 
+
+  ingress {
+    from_port = 0
+    to_port   = 0
+    protocol  = "-1"
+    cidr_blocks = [data.aws_vpc.vpc.cidr_block]
+  }
+
   ingress {
     from_port = 22
     to_port   = 22
