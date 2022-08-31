@@ -121,8 +121,8 @@ module "eks" {
       from_port   = 0
       to_port     = 0
       type        = "ingress"
-      self        = true
       cidr_blocks = [data.aws_vpc.vpc.cidr_block]
+      source_cluster_security_group = true
     }
 
     ingress_self_all = {
