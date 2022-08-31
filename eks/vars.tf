@@ -41,11 +41,6 @@ variable "environment" {
   type        = string
 }
 
-variable "environment" {
-  description = "the Deployment environment"
-  type        = string
-}
-
 variable "disksize" {
   description = "the disk size of the node group nodes "
   type        = string
