@@ -148,7 +148,7 @@ module "eks" {
       max_size               = var.max_size
       desired_size           = var.desired_size
       create_launch_template = false
-      launch_template_name   = "default"
+      launch_template_name   = ""
       instance_types         = [var.spot_instance_types]
       capacity_type          = "SPOT"
       labels = {
@@ -171,7 +171,7 @@ module "eks" {
       max_size               = var.max_size
       desired_size           = var.desired_size
       create_launch_template = false
-      launch_template_name   = "shared"
+      launch_template_name   = ""
       instance_types         = [var.ondemand_shared_instance_type]
       capacity_type          = "ON_DEMAND"
       labels = {
@@ -195,7 +195,7 @@ module "eks" {
       max_size               = var.max_size
       desired_size           = var.desired_size
       create_launch_template = false
-      launch_template_name   = "memory-intensive"
+      launch_template_name   = ""
       instance_types         = [var.ondemand_memory_instance_type]
       capacity_type          = "ON_DEMAND"
       labels = {
