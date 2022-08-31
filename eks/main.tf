@@ -47,7 +47,6 @@ resource "aws_security_group" "cluster_additional_security_group" {
     from_port = 443
     to_port   = 443
     protocol  = "tcp"
-
     cidr_blocks = [data.aws_vpc.vpc.cidr_block]
   }
   egress {
@@ -121,6 +120,7 @@ module "eks" {
       from_port   = 0
       to_port     = 0
       type        = "ingress"
+      cidr_blocks = [data.aws_vpc.vpc.cidr_block]
       self        = true
     }
     egress_all = {
