@@ -52,7 +52,7 @@ resource "aws_security_group" "cluster_additional_security_group" {
 }
 
 
-resource "aws_iam_user_policy" "secret_manager_read_only" {
+resource "aws_iam_policy" "secret_manager_read_only" {
   name = "SecretsManagerReadOnly"
 
   policy = <<EOF
@@ -77,7 +77,7 @@ resource "aws_iam_user_policy" "secret_manager_read_only" {
 EOF
 
   tags = {
-    Name        = "SecretsManagerReadOnly"
+    Name = "SecretsManagerReadOnly"
 }
 }
 
