@@ -1,3 +1,10 @@
+## [1.1.18](https://github.com/neeltom92/infrastructure-modules/compare/v1.1.17...v1.1.18) (2022-08-31)
+
+
+### Fix
+
+* policy ([3f4de8e](https://github.com/neeltom92/infrastructure-modules/commit/3f4de8e40462d5a59a77d4da3ae443fcc9730bf7))
+
 ## [1.1.17](https://github.com/neeltom92/infrastructure-modules/compare/v1.1.16...v1.1.17) (2022-08-31)
 
 
