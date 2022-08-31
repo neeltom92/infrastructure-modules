@@ -115,16 +115,6 @@ module "eks" {
 
   node_security_group_additional_rules = {
 
-    ingress_cluster_all = {
-      description = "VPC node CIDR"
-      protocol    = "-1"
-      from_port   = 0
-      to_port     = 0
-      type        = "ingress"
-      cidr_blocks = [data.aws_vpc.vpc.cidr_block]
-      source_cluster_security_group = true
-    }
-
     ingress_self_all = {
       description = "Node to node all ports/protocols"
       protocol    = "-1"
