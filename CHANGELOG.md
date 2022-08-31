@@ -1,3 +1,10 @@
+## [1.1.11](https://github.com/neeltom92/infrastructure-modules/compare/v1.1.10...v1.1.11) (2022-08-31)
+
+
+### Fix
+
+* update more ingress rules ([dbf4ddf](https://github.com/neeltom92/infrastructure-modules/commit/dbf4ddf18480311a6437b9a96b1baa8e45280fce))
+
 ## [1.1.10](https://github.com/neeltom92/infrastructure-modules/compare/v1.1.9...v1.1.10) (2022-08-31)
 
 
