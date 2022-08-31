@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/neeltom92/infrastructure-modules/compare/v1.1.5...v1.1.6) (2022-08-31)
+
+
+### Fix
+
+* update the template name ([88be1fa](https://github.com/neeltom92/infrastructure-modules/commit/88be1fab45496b0840ca2eb86ceb87b4e34c85e1))
+
 ## [1.1.5](https://github.com/neeltom92/infrastructure-modules/compare/v1.1.4...v1.1.5) (2022-08-31)
 
 
