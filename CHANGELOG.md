@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/neeltom92/infrastructure-modules/compare/v1.1.19...v1.2.0) (2022-09-01)
+
+
+### New
+
+* made some changes to the code to relase a new ferature ([b55ad31](https://github.com/neeltom92/infrastructure-modules/commit/b55ad31a9c8616a2f6c6560f25a246ed29d995ce))
+
 ## [1.1.19](https://github.com/neeltom92/infrastructure-modules/compare/v1.1.18...v1.1.19) (2022-08-31)
 
 
