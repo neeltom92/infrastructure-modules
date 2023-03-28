@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/neeltom92/infrastructure-modules/compare/v1.2.0...v1.2.1) (2023-03-28)
+
+
+### Fix
+
+* updated the permissions ([e9b2aae](https://github.com/neeltom92/infrastructure-modules/commit/e9b2aaebf0c572ba7d86f63a2dba26206e622a09))
+
 # [1.2.0](https://github.com/neeltom92/infrastructure-modules/compare/v1.1.19...v1.2.0) (2022-09-01)
 
 
