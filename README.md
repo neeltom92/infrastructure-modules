@@ -10,6 +10,14 @@ need some changes to the read me file
 
 
 v{major}.{minor}.{patch} →
-"Fix: fix bug 123  {patch}
-"New: adds new feature" {minor}
-"Breaking: this is a major change" {major}
+
+
+### Major Version
+- **Breaking:** This is a major change. [Description of the major changes introduced.]
+
+### Minor Version
+- **New:** Adds new feature(s). [Description of the new features introduced.]
+
+### Patch Version
+- **Fix:** Fixes bug(s). [Description of the bug(s) fixed.]
+
