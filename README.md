@@ -9,11 +9,14 @@ semantic version details are referenced from : https://svdoscience.com/2020-10-3
 need some changes to the read me file
 
 
-v{major}.{minor}.{patch} → Major.Minor.Patch
+v{major}.{minor}.{patch} → Breaking.New.Fix
 example : v1.3.4
 
+#tags will be updated based on commit
 
+ref : git commit -am "Breaking: made version change"
 
+will update v1.3.4 to v2.0.0
 ## Major Version
 - **Breaking:** This is a major change. [Description of the major changes introduced.]
 
