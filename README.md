@@ -12,7 +12,7 @@ need some changes to the read me file
 v{major}.{minor}.{patch} → Breaking.New.Fix
 example : v1.3.4
 
-#tags will be updated based on commit
+# tags will be updated based on commit
 
 ref : git commit -am "Breaking: made version change"
 
