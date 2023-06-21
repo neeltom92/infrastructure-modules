@@ -1,5 +1,3 @@
-# this readme is not complete, its a work in progress
-
 # made breaking relase
 #infrastructure-modules
 
