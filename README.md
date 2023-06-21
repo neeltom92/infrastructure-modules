@@ -9,7 +9,8 @@ semantic version details are referenced from : https://svdoscience.com/2020-10-3
 need some changes to the read me file
 
 
-v{major}.{minor}.{patch} →
+v{major}.{minor}.{patch} → Major.Minor.Patch
+example : v1.3.4
 
 
 
