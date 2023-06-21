@@ -1,3 +1,10 @@
+# [2.0.0](https://github.com/neeltom92/infrastructure-modules/compare/v1.2.2...v2.0.0) (2023-06-21)
+
+
+### Breaking
+
+* updating the patch version ([4683981](https://github.com/neeltom92/infrastructure-modules/commit/468398173ddfe00e6b11dc6d2f7f72afb29d39c8))
+
 ## [1.2.2](https://github.com/neeltom92/infrastructure-modules/compare/v1.2.1...v1.2.2) (2023-06-21)
 
 
