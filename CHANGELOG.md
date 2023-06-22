@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/neeltom92/infrastructure-modules/compare/v2.0.0...v2.0.1) (2023-06-22)
+
+
+### Fix
+
+* updated new code ([58065f9](https://github.com/neeltom92/infrastructure-modules/commit/58065f9608003d3d6d304e69d799cc1503889735))
+
 # [2.0.0](https://github.com/neeltom92/infrastructure-modules/compare/v1.2.2...v2.0.0) (2023-06-21)
 
 
