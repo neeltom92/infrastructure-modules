@@ -5,6 +5,10 @@
 hello
 semantic version details are referenced from : https://svdoscience.com/2020-10-31/versioning-with-semantic-release
 need some changes to the read me file
+
+
+#Updating the version
+
 ### Version and Changelog Management
 
 Steps to update the version and changelog automatically using a specific format.
@@ -30,7 +34,6 @@ Here's an example to demonstrate the usage of the version and changelog manageme
 - Version: v1.3.4
 
 1. To patch the version to v1.3.5 and changelog, perform the following steps:
-
 Execute the command: `git commit -am "Fix: YOUR_COMMIT_MESSAGE"`.
 
 ```diff
@@ -40,19 +43,16 @@ Execute the command: `git commit -am "Fix: YOUR_COMMIT_MESSAGE"`.
 - This command will update the version from v1.3.4 to v1.3.5.
 - The changelog will be automatically generated based on the commit message.
 
-3. To update the Minor version
-
+2. To update the Minor version
 Execute the command: `git commit -am "New: YOUR_COMMIT_MESSAGE"`
 
 ```diff
-- - example: git commit -am "New: IR-12345 deployed prometheus alerts"
+- example: git commit -am "New: IR-12345 deployed prometheus alerts"
 ```
 - **New** keyword will update the major version
 - This command will update the version from v1.3.4 to v1.4.0
 
-
-2. To update the Major version
-
+3. To update the Major version
 Execute the command: `git commit -am "Breaking: YOUR_COMMIT_MESSAGE"`
 
 ```diff
@@ -60,7 +60,3 @@ Execute the command: `git commit -am "Breaking: YOUR_COMMIT_MESSAGE"`
 ```
 - **Breaking** keyword will update the major version
 - This command will update the version from v1.3.4 to v2.0.0
-
-## Conclusion
-
-By following these steps, you can easily update the version and changelog automatically for your project. This helps in keeping track of the changes made and provides a clear overview of each version's major changes, new features, and bug fixes.
