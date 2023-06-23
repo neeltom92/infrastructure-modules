@@ -34,7 +34,7 @@ To patch the version to v1.3.5 and changelog, perform the following steps:
 1. Execute the command: `git commit -am "Fix: YOUR_COMMIT_MESSAGE"`.
 
 ```diff
-- example: git commit -am "Fix: IR-12345 fixed pager duty alerts"
+git commit -am "Fix: IR-12345 fixed pager duty alerts"
 ```
 - This command will update the version from v1.3.4 to v1.3.5.
 - The changelog will be automatically generated based on the commit message.
@@ -44,7 +44,7 @@ To patch the version to v1.3.5 and changelog, perform the following steps:
 Execute the command: `git commit -am "Breaking: YOUR_COMMIT_MESSAGE"`
 
 ```diff
-- example: **git commit -am "Breaking: IR-12345 updated EKS version"**
+git commit -am "Breaking: IR-12345 updated EKS version"
 ```
 - This command will update the version from v1.3.4 to v2.0.0
 - The changelog will be automatically generated based on the commit message.
