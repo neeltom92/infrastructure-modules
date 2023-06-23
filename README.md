@@ -29,12 +29,12 @@ Here's an example to demonstrate the usage of the version and changelog manageme
 
 - Version: v1.3.4
 
-To patch the version to v1.3.5 and changelog, perform the following steps:
+1. To patch the version to v1.3.5 and changelog, perform the following steps:
 
-1. Execute the command: `git commit -am "Fix: YOUR_COMMIT_MESSAGE"`.
+Execute the command: `git commit -am "Fix: YOUR_COMMIT_MESSAGE"`.
 
 ```diff
-git commit -am "Fix: IR-12345 fixed pager duty alerts"
+- example: git commit -am "Fix: IR-12345 fixed pager duty alerts"
 ```
 - **Fix** keyword will update the patch version
 - This command will update the version from v1.3.4 to v1.3.5.
@@ -45,10 +45,10 @@ git commit -am "Fix: IR-12345 fixed pager duty alerts"
 Execute the command: `git commit -am "New: YOUR_COMMIT_MESSAGE"`
 
 ```diff
-git commit -am "New: IR-12345 deployed prometheus alerts"
+- - example: git commit -am "New: IR-12345 deployed prometheus alerts"
 ```
 - **New** keyword will update the major version
-- This command will update the version from v1.3.4 to v2.0.0
+- This command will update the version from v1.3.4 to v1.4.0
 - The changelog will be automatically generated based on the commit message.
 
 
@@ -57,7 +57,7 @@ git commit -am "New: IR-12345 deployed prometheus alerts"
 Execute the command: `git commit -am "Breaking: YOUR_COMMIT_MESSAGE"`
 
 ```diff
-git commit -am "Breaking: IR-12345 updated EKS version"
+- example: git commit -am "Breaking: IR-12345 updated EKS version"
 ```
 - **Breaking** keyword will update the major version
 - This command will update the version from v1.3.4 to v2.0.0
