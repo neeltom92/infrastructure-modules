@@ -49,7 +49,6 @@ Execute the command: `git commit -am "New: YOUR_COMMIT_MESSAGE"`
 ```
 - **New** keyword will update the major version
 - This command will update the version from v1.3.4 to v1.4.0
-- The changelog will be automatically generated based on the commit message.
 
 
 2. To update the Major version
@@ -61,7 +60,6 @@ Execute the command: `git commit -am "Breaking: YOUR_COMMIT_MESSAGE"`
 ```
 - **Breaking** keyword will update the major version
 - This command will update the version from v1.3.4 to v2.0.0
-- The changelog will be automatically generated based on the commit message.
 
 ## Conclusion
 
