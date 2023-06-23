@@ -36,8 +36,21 @@ To patch the version to v1.3.5 and changelog, perform the following steps:
 ```diff
 git commit -am "Fix: IR-12345 fixed pager duty alerts"
 ```
+- **Fix** keyword will update the patch version
 - This command will update the version from v1.3.4 to v1.3.5.
 - The changelog will be automatically generated based on the commit message.
+
+3. To update the Minor version
+
+Execute the command: `git commit -am "New: YOUR_COMMIT_MESSAGE"`
+
+```diff
+git commit -am "New: IR-12345 deployed prometheus alerts"
+```
+- **New** keyword will update the major version
+- This command will update the version from v1.3.4 to v2.0.0
+- The changelog will be automatically generated based on the commit message.
+
 
 2. To update the Major version
 
@@ -46,6 +59,7 @@ Execute the command: `git commit -am "Breaking: YOUR_COMMIT_MESSAGE"`
 ```diff
 git commit -am "Breaking: IR-12345 updated EKS version"
 ```
+- **Breaking** keyword will update the major version
 - This command will update the version from v1.3.4 to v2.0.0
 - The changelog will be automatically generated based on the commit message.
 
