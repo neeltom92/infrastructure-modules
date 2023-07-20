@@ -16,7 +16,7 @@ Steps to update the version and changelog automatically using a specific format.
 Version Format: v{major}.{minor}.{patch} → Breaking.New.Fix
 
 Example:
-v1.3.4
+v1.3.5
 
 Tags will be updated based on **commit messages**, the changelog is organized based on the type of changes introduced in each version.
 
