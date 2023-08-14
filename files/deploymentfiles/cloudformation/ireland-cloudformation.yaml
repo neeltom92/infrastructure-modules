@@ -21,23 +21,24 @@
         Properties:
  CidrBlock: 10.14.0.0/16
           EnableDnsSupport: true
-          EnableDnsHostnames: true
+i          EnableDnsHostnames: true
+
 
       ## SUBNETS
       PublicSubnet1:
-        Type: AWS::EC2::Subnet
+     Type: AWS::EC2::Subnet
         Properties:
-          VpcId: !Ref PubPrivateVPC
-          AvailabilityZone: ap-south-1a
+          VpcId: !Ref PubPrivateV          AvailabilityZone: ap-south-1a
           CidrBlock: 10.14.1.0/24
           MapPublicIpOnLaunch: true
           Tags:
+
+
+
+
             - Key: Name
-              Value: !Sub ${EnvironmentName}-public-a
-
-
-      PublicSubnet2:
-        Type: AWS::EC2::Subnet
+              Value: !Sub ${EnvironmentName}-public-      PublicSubnet2:
+     Type: AWS::EC2::Subnet
         Properties:
           VpcId: !Ref PubPrivateVPC
           AvailabilityZone: ap-south-1b
