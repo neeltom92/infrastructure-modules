@@ -1,0 +1,11 @@
+groups:
+  - name: memory_alert
+    rules:
+      - alert: memory_threshold
+        expr: (((node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{} - node_memory_Cached_bytes{} - node_memory_Buffers_bytes{}) / (node_memory_MemTotal_bytes{})) * 100) > 90
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: Memory Utilization is more than the threshold which is 90
+          description: Memory Utilization is more than the threshold for the instance {{$labels.instance}}

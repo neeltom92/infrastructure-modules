@@ -1,0 +1,11 @@
+groups:
+  - name: memory_alert
+    rules:
+      - alert: memory_threshold
+        expr: node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100 < 10
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: Host out of memory (instance {{ $labels.instance }})
+          description: Memory Utilization is more than the threshold for the instance {{$labels.instance}}

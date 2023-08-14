@@ -1,0 +1,11 @@
+groups:
+- name: alert-rules-prom-reload
+  rules:
+  - alert: PrometheusConfigurationReloadFailure
+    expr: prometheus_config_last_reload_successful != 1
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      description: 'Prometheus configuration reload failure (instance {{ $labels.instance }})'
+      summary: 'Prometheus configuration reload error\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}'

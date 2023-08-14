@@ -1,0 +1,11 @@
+groups:
+- name: alert-rules-alertmgr-reload
+  rules:
+  - alert: PrometheusAlertmanagerConfigurationReloadFailure
+    expr: alertmanager_config_last_reload_successful != 1
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      description: 'AlertManager configuration reload failure (instance {{ $labels.instance }})'
+      summary: 'AlertManager Prometheus configuration reload error\n  VALUE = {{ $value }}\n  LABELS = {{ $labels }}'

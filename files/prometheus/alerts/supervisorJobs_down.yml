@@ -1,0 +1,11 @@
+groups:
+  - name: supervisor_job_down_alert
+    rules:
+      - alert: supervisor_job_down_alert
+        expr: node_supervisord_up == 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: One or more supervisor jobs are down
+          description: Supervisor job {{$labels.name}} in {{$labels.instance}} is down

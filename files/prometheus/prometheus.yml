@@ -1,0 +1,264 @@
+# my global config
+global:
+  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+       - localhost:9093
+      # - alertmanager:9093
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+#rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+rule_files:
+    - "alerts/k8s_cluster_alerts_rules.yml"
+    - "alerts/cpu_usage.yml"
+    - "alerts/supervisorJobs_down.yml"
+    - "alerts/disk_usage.yml"
+    - "alerts/node_down.yml"
+    - "alerts/memory_usage.yml"
+    - "alerts/memory_usage.yml"
+    - "alerts/up_down.yaml"
+    - "alerts/disk_usage_new.yml"
+    - "alerts/prom_relod.yml"
+    - "alerts/alertpromconfigreload.yaml"
+    - "alerts/promtargetsmissing.yaml"
+    - "alerts/node_down_general.yaml" 
+    - "alerts/node_memory_usage.yml" 
+    - "alerts/k8s_oom.yaml"
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+scrape_configs:
+  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+  - job_name: 'prometheus'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+    - targets: ['localhost:9090', 'prod-zolve-monitoring-01:9100']
+
+  - job_name: 'accops-sbm'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+            - targets: ['10.24.2.12:9100']
+  
+  - job_name: 'sbm-sftp'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+            - targets: ['10.24.2.105:9100']
+
+  - job_name: 'prod-elk'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+            - targets: ['10.14.97.219:9100']
+
+
+  - job_name: 'account-website'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+            - targets: ['10.14.73.137:9100', '10.14.66.71:9100']
+
+  - job_name: 'finflux-apps'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+            - targets: ['10.49.21.158:9100', '10.49.21.31:9100']
+              
+
+  - job_name: 'prod-hevodata-jump'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+            - targets: ['10.14.21.62:9100']
+
+  - job_name: 'prod-sftp-service-server'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+            - targets: ['10.14.157.170:9100']
+
+              # - job_name: 'blog-website'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+              #  static_configs:
+              #        - targets: ['10.14.102.236:9100']
+
+
+  - job_name: 'zolve-com-website'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+            - targets: ['10.14.105.137:9100', '10.14.106.109:9100']
+
+              #- job_name: 'metabase'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+              #    static_configs:
+              #- targets: ['10.14.106.74:9100']
+
+
+
+              
+
+              # - job_name: 'jenkins'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+              #static_configs:
+              # - targets: ['10.14.3.74:9100']
+
+
+  - job_name: 'prod-hevodata-jump-usa'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+            - targets: ['10.74.1.131:9100']
+
+
+              #  - job_name: 'lsq-cron-host'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+              # static_configs:
+              # - targets: ['10.14.60.72:9100']
+
+
+  - job_name: 'jenkins-prod'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+            - targets: ['10.14.3.74:9100']
+
+
+  - job_name: 'zolve-main-website-in-old-account'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+            - targets: ['172.31.45.243:9100']
+              
+  - job_name: 'zolve-blog-website-in-old-account'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+            - targets: ['172.31.6.96:9100']
+              
+  - job_name: 'pritunl-vpn'
+
+    # metrics_path defaults to '/metrics'
+    # scheme defaults to 'http'.
+
+    static_configs:
+            - targets: ['10.31.2.45:9100']              
+
+              
+  - job_name: 'federate'
+    scrape_interval: 1m
+
+    honor_labels: true
+    metrics_path: '/federate'
+
+    params:
+      'match[]':
+        - '{job="prometheus"}'
+        - '{job="prometheus-pushgateway"}'
+        - '{job="kubernetes-apiservers"}'
+        - '{job="kubernetes-nodes"}'
+        - '{job="kubernetes-nodes-cadvisor"}'
+        - '{job="kubernetes-pods"}'
+        - '{job="kubernetes-pods-slow"}'
+        - '{job="kubernetes-service-endpoints"}'
+        - '{job="kubernetes-service-endpoints-slow"}'
+        - '{job="kubernetes-services"}'
+        - '{__name__=~"job:.*"}'
+
+    static_configs:
+            - targets: ['prometheus-k8s.prod-int-zolve.com:80']
+
+
+  - job_name: 'federate-remittance'
+    scrape_interval: 1m
+
+    honor_labels: true
+    metrics_path: '/federate'
+
+    params:
+      'match[]':
+        - '{job="prometheus"}'
+        - '{job="prometheus-pushgateway"}'
+        - '{job="kubernetes-apiservers"}'
+        - '{job="kubernetes-nodes"}'
+        - '{job="kubernetes-nodes-cadvisor"}'
+        - '{job="kubernetes-pods"}'
+        - '{job="kubernetes-pods-slow"}'
+        - '{job="kubernetes-service-endpoints"}'
+        - '{job="kubernetes-service-endpoints-slow"}'
+        - '{job="kubernetes-services"}'
+        - '{__name__=~"job:.*"}'
+
+    static_configs:
+            - targets: ['prometheus-remittance.prod-int-zolve.com:80']
+              
+  - job_name: 'federate-usa'
+    scrape_interval: 1m
+
+    honor_labels: true
+    metrics_path: '/federate'
+
+    params:
+      'match[]':
+        - '{job="prometheus"}'
+        - '{job="prometheus-pushgateway"}'
+        - '{job="kubernetes-apiservers"}'
+        - '{job="kubernetes-nodes"}'
+        - '{job="kubernetes-nodes-cadvisor"}'
+        - '{job="kubernetes-pods"}'
+        - '{job="kubernetes-pods-slow"}'
+        - '{job="kubernetes-service-endpoints"}'
+        - '{job="kubernetes-service-endpoints-slow"}'
+        - '{job="kubernetes-services"}'
+        - '{__name__=~"job:.*"}'
+
+    static_configs:
+            - targets: ['prometheus-usa.prod-int-zolve.com:80'] 
+

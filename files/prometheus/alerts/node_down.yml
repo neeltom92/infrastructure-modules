@@ -1,0 +1,11 @@
+groups:
+  - name: node_down_alert
+    rules:
+      - alert: node_down
+        expr: up{job="prometheus"} == 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: One or more nodes are down (might be just prometheus agent was down)
+          description: Node {{$labels.instance}} is down

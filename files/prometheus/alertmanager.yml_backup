@@ -1,0 +1,54 @@
+global:
+  resolve_timeout: 5m
+
+route:
+  group_by: ['alertname']
+  group_wait: 10s
+  group_interval: 10s
+  repeat_interval: 30m
+  receiver: 'prod_alert_slack'
+  routes:
+  # Send severity=page alerts to the pager.
+   - match:
+      severity: critical|warning|page
+     receiver: team-pager
+receivers:
+- name: team-pager
+  opsgenie_configs:
+  - responders:
+    - name: 'ZolveOncall'
+      type: 'team'      
+    api_key: 098e1e4a-2af8-4d59-8166-f5069a5b7c97
+    api_url: https://api.opsgenie.com/
+    message: '{{ template "opsgenie.default.message" . }}'
+    priority: P1
+    send_resolved: true
+- name: 'prod_alert_slack'
+  slack_configs:
+  - api_url: https://hooks.slack.com/services/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
+    channel: '#prod-alerts'
+    send_resolved: true
+    username: '{{ template "slack.default.username" . }}'
+    color: '{{ if eq .Status "firing" }}danger{{ else }}good{{ end }}'
+    title: '{{ template "slack.default.title" . }}'
+    title_link: '{{ template "slack.default.titlelink" . }}'
+    pretext: '{{ .CommonAnnotations.summary }}'
+    text: |-
+      {{ range .Alerts }}
+         *Alert:* {{ .Annotations.summary }} - `{{ .Labels.severity }}`
+        *Description:* {{ .Annotations.description }}
+        *Message:* {{ .Annotations.message }}
+        *Details:*
+        {{ range .Labels.SortedPairs }} • *{{ .Name }}:* `{{ .Value }}`
+        {{ end }}
+      {{ end }}
+    fallback: '{{ template "slack.default.fallback" . }}'
+    icon_emoji: '{{ template "slack.default.iconemoji" . }}'
+    icon_url: '{{ template "slack.default.iconurl" . }}'
+    #text: "summary: {{ .CommonAnnotations.summary }}\ndescription: {{ .CommonAnnotations.description }}"
+inhibit_rules:
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'dev', 'instance']

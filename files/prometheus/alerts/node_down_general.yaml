@@ -1,0 +1,6 @@
+groups:
+- name: node.rules
+  rules:
+  - alert: InstanceDown
+    expr: up{job="node"} == 0
+    for: 10m
