@@ -19,7 +19,7 @@
       PubPrivateVPC:
         Type: AWS::EC2::VPC
         Properties:
-          CidrBlock: 10.14.0.0/16
+ CidrBlock: 10.14.0.0/16
           EnableDnsSupport: true
           EnableDnsHostnames: true
 
