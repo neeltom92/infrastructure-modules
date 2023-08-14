@@ -1,4 +1,13 @@
 repos:
+  - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
+    rev: 0.2.1
+    hooks:
+      - id: yamlfmt
+        files: '^files/deploymentfiles/.*\.(yaml|yml)$'
+        exclude: '(?i)^(.*\.md|.*\.txt|.*\.rb|.*\.conf|.*\.cfg)$'
+        args: ["--check"]  # Use --check flag to report issues without making changes
+        stages: [commit]
+
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.32.0
     hooks:
@@ -8,6 +17,6 @@ repos:
         additional_dependencies:
           - yamllint
         files: '^files/deploymentfiles/.*\.(yaml|yml)$'
-        exclude: '(?i)^(.*\.md|.*\.txt|.*\.conf|.*\.cfg)$'
+        exclude: '(?i)^(.*\.md|.*\.txt|.*\.rb|.*\.conf|.*\.cfg)$'
         stages: [commit]
 
